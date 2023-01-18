@@ -16,7 +16,7 @@ Angular 11
 
         Dynamic Web App
 
-            Server                                      Client
+            Server                                      Client (Browser)
                 Controllers <-----------REQ------------
                 and Views   ------RESP (html+css+js)--->  unloads the existing page (if any)
                                                             and loads the newly received one.
@@ -75,6 +75,71 @@ Angular 11
     
     Lab Setup
 
-        
+        VS Code         IDE
+
+        NodeJS +         Development Env        nodejs.org                              node --version
+        Angular CLI                             npm install -g @angular/cli@14.2.0      ng version
+
+    NodeJS
+
+        is a javascript runtime. Intended to enable stand alone execution of JS.
+
+        a project development involves a varity of steps like
+
+            code composition            IDE             VSCode
+            code compilation            Compiler        babel
+            packageing/bundling         Build tool      npm
+            testing                     Testing Tool    Karma and Jasmine
+            hosting                     Web Server      Angular Live Development Server
+
+        now these tools like babel,npm,karma ..etc., need to run on the dev machine.
+        and these tools are JS tools hence will execute on NodeJS on the dev machine.
 
 
+    Angular Archetecture
+
+        an angular application is made up of a variety of resources.
+        each angular resource is a typescript class.
+        each angular resource is marked with a decorator to identify its role.
+        each angular decorator is supplied with a json object called meta-data.
+        meta-data is config info of each resource.
+
+        Modules
+            @NgModule({
+                declarations:[],
+                imports:[],
+                exports:[],
+                providers:[],
+                bootstrap:[]
+            })
+            class SalesModule {}
+
+        Component Directives / Components
+            @Component({
+                selector:'',
+                templateUrl:'',
+                styelUrls:[],
+                providers:[]
+            })
+            class DashboardComponent {}
+
+        Attribute Directives 
+            @Directive({
+                selector:'',
+                providers:[]
+            })
+            class HighlighterDirective {}
+
+        Pipes
+            @Pipe({
+                name:'',
+                providers:[]
+            })
+            class InWordsPipe {}
+
+        Services
+            @Injectable({
+                providedIn:'root|any',
+                providers:[]
+            })
+            class SalesService {}
