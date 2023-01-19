@@ -143,3 +143,133 @@ Angular 11
                 providers:[]
             })
             class SalesService {}
+
+    Angular CLI
+
+        is a frontier of commands that help execute a varity of tasks on our application.
+
+        ng new proj-name
+
+        once inside the project:
+        
+        ng build               
+            transpell all .ts into .js and bundles them. those files are avaialble in 'dist'.
+        
+        ng serve
+            transpell all .ts into .js and bundles them. those files are hosted in a angular live
+            development server @ 4200 port.
+        
+        nr serve --port 9089 -o
+            transpell all .ts into .js and bundles them. those files are hosted in a angular live
+            development server @ 9089 port. and will launch the app in a browser.
+
+        ng test
+            transpell all .ts into .js and bundles them, then will execue all the test cases.
+
+        ng generate component ComponentName
+        ng g component ComponentName
+        ng g module ModuleName
+        ng g directive DirectiveName
+        ng g service ServiceName
+        ng g pipe PipeName
+        ng g class ClassName
+        ng g interface InterfaceName
+
+        '--skip-tests' flag along with ng g command to avoid creating test cases.
+
+    Angular Modules
+
+        JS modules and Angular modules are different and they live side-by-side in
+        an angular app.
+
+        An angular module is a logical unit for memory management. Each angular
+        app has one and only top-level module called 'root-module'. All other
+        modules are called 'feature-modules'.
+
+            @NgModule({
+                declarations:[],
+                imports:[],
+                exports:[],
+                providers:[],
+                bootstrap:[]
+            })
+            class SalesModule {}
+
+            declarations    holds a list of all components,directive and pipes that belong to current module
+            imports         holds a list of all feature-modules needed in current module.
+            exports         holds a list of all components,directive and pipes that belong to current module and
+                            are to be used by modules that import the current module.
+                            'exports' section does not exist for 'root-module'.
+            providers       holds a list of services that belong to the current module.
+            bootstrap       this section is only for 'root-module'.
+                            and holds a list of top-level components.
+
+    Directives
+
+        a directive allows html to be extended.
+
+        it is possible to create our own html elements and attributes through directives.
+
+        Directives used to create html elements are called Components or Component Directives.
+        Directives sued to create html attributes are called Attribute Directives.
+    
+    Components
+
+        a component is a new html element.
+        component =     state and behaviour             view            presentation
+                          typescript class          html template        style sheet
+                           component.ts             component.html      component.css
+
+        <dashborad></dashbord>              <h4 style="border:1px soldi black">My first app</h4>
+
+        dashboard.component.ts 
+
+            @Component({
+                selector:'dashboard',
+                templateUrl:'dashboard.component.html',
+                styleUrls:['dashboard.component.css']
+            })
+            class DashboardComponent{
+                title:string;
+
+                constructor(){
+                    this.title="My first app";
+                }
+            }
+
+        dashboard.component.html
+
+            <h4>{{title}}</h4>
+
+        dashboard.component.css
+
+            h4{
+                border:1px solid black;
+            }
+
+    Data Binding
+
+        is to bind the fields and methods of a component class to the DOM elements in
+        the component template.
+
+        Interpolation
+
+            syntax:     {{js-expresion}}
+            eg:         <h4>{{title}}</h4>
+
+        Tow-Way Data Binding
+
+            is used to bind a field to a form-element (input,select,textarea ..etc).
+
+            initially the value of the field is loaded into the form-element, and
+            whenever the form-element value is edited, the bound field is updated.
+
+            we use an attribute directive 'ngModel' from 'FormsModule' from '@angular/forms'
+
+                eg: <input type="text" [(ngModel)]="userName" />
+
+        One-Way Date Binding
+            Attribute Binding
+            Event Binding
+            Style Binding
+            CSS Class Binding
