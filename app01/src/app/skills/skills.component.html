@@ -1,0 +1,14 @@
+<section class="skills">
+
+    <p *ngIf="skills.length===0"> <strong>No skills added yet.</strong></p>
+
+    <ol *ngIf="skills.length>0">
+        <li *ngFor="let s of skills"> {{s}} </li>
+    </ol>
+
+    <form>
+        <label>Skill Name: <input type="text" name="tb1" [(ngModel)]="skill" /></label>
+        <button type="button" (click)="add()">ADD</button>
+        <button type="button" (click)="remove()">REMOVE</button>
+    </form>
+</section>

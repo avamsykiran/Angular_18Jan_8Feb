@@ -1,0 +1,14 @@
+<section class="arth">
+    <form>
+        <label>Operand1: <input type="number" name="o1" [(ngModel)]="op1" /></label>
+        <label>Operand2: <input type="number" name="o2" [(ngModel)]="op2" /></label>
+    </form>
+
+    <div>
+        <p>Sum of {{op1}} and {{op2}} is <strong>{{op1+op2}}</strong></p>
+        <p>Diff of {{op1}} and {{op2}} is <strong>{{op1-op2}}</strong></p>
+        <p>Prod of {{op1}} and {{op2}} is <strong>{{op1*op2}}</strong></p>
+        <p>Qut of {{op1}} and {{op2}} is <strong>{{op1/op2}}</strong></p>
+        <p>Rem of {{op1}} and {{op2}} is <strong>{{op1%op2}}</strong></p>
+    </div>
+</section>

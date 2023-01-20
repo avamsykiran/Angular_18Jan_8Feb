@@ -1,4 +1,15 @@
 <section class="wel">
+
+    <div>
+        <img 
+            [src]="logos[logoIndex]" 
+            (click)="nextLogo()" 
+            [style.width.px]="logoWidth"
+            [class.center]="flagC"
+            [class.border]="flagB"
+            />
+    </div>
+
     <p><strong>Hello <em>{{userName}}</em>! We are happy to see you here.</strong></p>
 
     <form>
@@ -6,6 +17,15 @@
             <label>User Name:
                 <input type="text" name="tb1" [(ngModel)]="userName" />
             </label>
+        </div>
+        <div>
+            <label>Width:
+                <input type="range" name="r1" [(ngModel)]="logoWidth" min="50" max="500" /> {{logoWidth}} px.
+            </label>
+        </div>
+        <div>
+            <label> <input type="checkbox" name="c1" [(ngModel)]="flagC" /> Align Center</label>
+            <label> <input type="checkbox" name="c2" [(ngModel)]="flagB" /> Apply Border</label>
         </div>
     </form>
 </section>
