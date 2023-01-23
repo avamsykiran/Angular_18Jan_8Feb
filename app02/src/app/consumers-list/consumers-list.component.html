@@ -1,0 +1,24 @@
+<h4>Consumers List</h4>
+
+<p *ngIf="consumers && consumers.length===0" class="alert alert-info p-2">
+    No Consumers Yet.
+</p>
+
+<table class="table table-bordered table-striped" *ngIf="consumers && consumers.length>0">
+    <thead>
+        <tr>
+            <th>Consumer#</th>
+            <th>Full Name</th>
+            <th>Mobile</th>
+            <th>Mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of consumers">
+            <td>{{c.id}}</td>
+            <td>{{c.fullName}}</td>
+            <td>{{c.mobile}}</td>
+            <td>{{c.mailId}}</td>
+        </tr>
+    </tbody>
+</table>

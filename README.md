@@ -336,4 +336,39 @@ Angular 11
             json
             async
 
-    
+    Bootstrap Integration
+
+        npm install bootstrap --save
+
+        node_modules/bootstrap/dist/css/bootstrap.min.css
+        node_modules/bootstrap/dist/js/bootstrap.min.js
+
+        include these paths in the 'styles' and 'scripts' sections
+        of angular.json file respectivly.
+
+    Model using Typescript interface
+
+        typescript interface can have fields and methods without implementations.
+
+    Services
+
+        are expected to hold bussiness logic like computations,
+        validations or rest-api calls ...etc.,
+
+        services are injectables meaning that a service object is
+        supplied into any class by angular.
+
+            constructor(private obj:MyService){
+                //an obj of the MyService is injected here.
+            }
+
+        Each injector can supply exactly one object.
+        Each resource has its own injector alongside the injector from its modules.
+
+        app.module (ROOT)               root-injector
+            |-DashBoardComponent         injector,root-injector
+            |-HeaderComponent            injector,root-injector
+            |-SalesModule               sales-injector
+                |-OrdersComponent         injector,sales-injector,root-injector
+
+        

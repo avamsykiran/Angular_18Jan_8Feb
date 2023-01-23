@@ -1,0 +1,8 @@
+.pd{
+    background-color: #fafaff;
+    padding: 10px;
+}
+
+.pd>div{
+    columns: 2;
+}
