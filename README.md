@@ -270,6 +270,70 @@ Angular 11
 
         One-Way Date Binding
             Attribute Binding
+
+                used to bind an javascript expression to any html-attribute or angular attribute directive.
+
+                syntax: <tagName [attributeName]="expression" > tagContent </tagName>
+                eg:     <table [border]="b" > ..... </table>
+
             Event Binding
+
+                used to bind a method with an event-attribute-directive, so that - that method is invoked
+                when that event occurs.
+
+                event-attribute-directive = html-event-attribut - 'on'
+
+                html-event-attribute        event-attribute-directives
+                    onClick                     click
+                    onFocus                     focus
+                    onBlur                      blur
+                    onnMouseOver                mouseover
+                    onKeyUp                     keyup
+                    ..etc.,                     ....etc.,
+
+                syntax: <tagName (eventAttributeDirective)="method()"> ... </tagName>
+                
             Style Binding
+
+                used to bind an expression with a css-property.
+
+                eg: <p [style.backgroundColor]="bgc" > Some Text </p>
+
             CSS Class Binding
+
+                used to either apply/remove a css-class dynamically through a boolean field.
+
+                syntax: <tagName [class.cssClassName]="booleanExpression"> ... </tagName> 
+
+    Attribute Directives
+
+        Event Attribute Directives
+
+        Structural Directives
+
+            *ngIf
+            *ngFor
+            ngSwitch    *ngSwitchCase *ngDefault
+
+        Custom Directives
+
+             @Directive({
+                selector:'',
+                providers:[]
+            })
+            class HighlighterDirective {}
+
+    Pipes
+
+            is used to tranform an expression just before it is rendered.
+
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency
+            date
+            json
+            async
+
+    
