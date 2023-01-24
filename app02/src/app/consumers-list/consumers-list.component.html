@@ -11,6 +11,7 @@
             <th>Full Name</th>
             <th>Mobile</th>
             <th>Mail</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
             <td>{{c.fullName}}</td>
             <td>{{c.mobile}}</td>
             <td>{{c.mailId}}</td>
+            <td>
+                <button type="button" class="btn btn-sm btn-danger" (click)="remove(c.id)">REMOVE</button>
+            </td>
         </tr>
     </tbody>
 </table>

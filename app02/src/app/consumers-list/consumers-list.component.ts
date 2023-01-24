@@ -22,4 +22,9 @@ export class ConsumersListComponent implements OnInit {
   loadData(){
     this.consumers = this.consumerService.getAll();
   }
+
+  remove(id:number){
+    this.consumerService.deleteById(id);
+    this.loadData();
+  }
 }

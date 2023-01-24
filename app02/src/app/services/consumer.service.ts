@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { max } from 'rxjs';
 import { Consumer } from '../models/consumer';
 
 @Injectable({
@@ -27,7 +28,7 @@ export class ConsumerService {
   add(c: Consumer): Consumer {
     let maxId = this.consumers.length === 0 ? 0 :
       this.consumers.map(cons => cons.id).reduce((id1, id2) => Math.max(id1, id2));
-    c.id = maxId = 1;
+    c.id = maxId + 1;
     this.consumers.push(c);
     return c;
   }

@@ -371,4 +371,36 @@ Angular 11
             |-SalesModule               sales-injector
                 |-OrdersComponent         injector,sales-injector,root-injector
 
-        
+    Routing
+
+        enables us to display one of the components 
+        based on the URL.
+
+        RouterModule    from '@angular/router'
+
+            Route            {path:'',component:C,pathMatch:'',redirectTo:'',children:[]}
+            Routes           Route[]
+
+            Router           service, 
+                                navigateByUrl("complete/url/path"), 
+                                navigate(['complete','url','path'])
+
+            ActivatedRoute  service, data from the request like 
+                            path-variables or query parmas
+
+            router-outlet   component, that must be used in top-level component and
+                            gets repalced by the matching component as per the current url.
+
+            routerLink          attribute directive used on 'a' tag instead of its 'href'.
+
+            routerLinkActive    attribute directive, it takes a css-class and that class
+                                is applied on the 'a' tag whenever it is active.
+
+    Assignment
+
+        Create an Angular SPA to perform CRUD operation on 
+        Employee model. 
+            {id:0,firstName:'',lastName:'',mailId:'',basicPay:0,dept:''};
+        The dept msut be choosen from a drop-down ('HR','Operations','Sales','Marketing')
+
+    
