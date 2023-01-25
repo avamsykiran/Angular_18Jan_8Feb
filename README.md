@@ -403,4 +403,22 @@ Angular 11
             {id:0,firstName:'',lastName:'',mailId:'',basicPay:0,dept:''};
         The dept msut be choosen from a drop-down ('HR','Operations','Sales','Marketing')
 
-    
+    Angular Forms
+
+        Template Driven                             Model Driven / Reactive
+
+    ngForm,ngModel from FormsModule            FormControl,FormGroup from ReactiveFormsModule
+
+    invalid,valid,dirty,prestine,touched,      invalid,valid,dirty,prestine,touched,
+    untouched from ngModel                     untouched from FormControl
+
+    the entire form is constructed in the      a form-model is created in the component 
+    template and each input is bound to         and is mapped to the DOM in the template.
+    fields in the component. 
+
+    testing html templates is a little hard    testing a javascript snippet is much easier.
+
+    is used in very simple senarios like        is used in larger complex senarios for
+    a form having not more than two controls.   larger forms / nested forms ...etc.,
+            
+
