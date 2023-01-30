@@ -405,20 +405,62 @@ Angular 11
 
     Angular Forms
 
-        Template Driven                             Model Driven / Reactive
+            Template Driven                             Model Driven / Reactive
 
-    ngForm,ngModel from FormsModule            FormControl,FormGroup from ReactiveFormsModule
+        ngForm,ngModel from FormsModule            FormControl,FormGroup from ReactiveFormsModule
 
-    invalid,valid,dirty,prestine,touched,      invalid,valid,dirty,prestine,touched,
-    untouched from ngModel                     untouched from FormControl
+        invalid,valid,dirty,prestine,touched,      invalid,valid,dirty,prestine,touched,
+        untouched from ngModel                     untouched from FormControl
 
-    the entire form is constructed in the      a form-model is created in the component 
-    template and each input is bound to         and is mapped to the DOM in the template.
-    fields in the component. 
+        the entire form is constructed in the      a form-model is created in the component 
+        template and each input is bound to         and is mapped to the DOM in the template.
+        fields in the component. 
 
-    testing html templates is a little hard    testing a javascript snippet is much easier.
+        testing html templates is a little hard    testing a javascript snippet is much easier.
 
-    is used in very simple senarios like        is used in larger complex senarios for
-    a form having not more than two controls.   larger forms / nested forms ...etc.,
-            
+        is used in very simple senarios like        is used in larger complex senarios for
+        a form having not more than two controls.   larger forms / nested forms ...etc.,
+                
+    Observbles From RxJs
 
+        Observable is enhanced Promise.
+
+        Observable provide ractive programming.
+
+        const bgJob = (observer:Observer) => {
+            //code the background job.....
+
+            //the job may come up with some intermediate results
+            observer.next(intermediateResult);
+
+            //the job may encoutner an error
+            observer.error(err);
+
+            //the job may get completed
+            observer.complete();
+
+        };
+
+        let ob = new Observable(bgJob);
+
+        //Main Executor...
+
+        ob.subscribe({
+            next: data => { //we recevie the intemidateData... },
+            error: err => { //react to the error... },
+            complete: () => { //do whateever after the job is complete... }
+        }); 
+
+    Working With Rest-API and Angular
+
+        HttpClient from HttpClientModule from @angular/common/http
+
+         HttpClient
+            |
+            | - get(url) : Observable
+            | - post(url,reqBody) : Observable
+            | - put(url,reqBody) : Observable
+            | - delete(url) : Observable
+
+
+        
