@@ -1,0 +1,39 @@
+<form class="col-sm-5 mx-auto border border-primary p-2" (ngSubmit)="save()" [formGroup]="conForm">
+
+    <div *ngIf="errMsg" class="alert alert-danger p-2">
+        {{errMsg}}
+    </div>
+
+    <div>
+        <label>Consumer Id</label>
+        <input type="number" formControlName="id" class="form-control" readonly />
+    </div>
+    <div>
+        <label>Full Name</label>
+        <input type="text" class="form-control" formControlName="fullName" />
+        <div *ngIf="fnm.invalid && (fnm.dirty || fnm.touched)" class="alert alert-danger p-2">
+            <div *ngIf="fnm.errors!['required']">This field is mandatory</div>
+            <div *ngIf="fnm.errors!['minlength']">Full Name is supposed to be atleast 3 letters in length</div>
+            <div *ngIf="fnm.errors!['maxlength']">Full Name is supposed to be atmost 30 letters in length</div>
+        </div>
+    </div>
+    <div>
+        <label>Mobile</label>
+        <input type="text" class="form-control" formControlName="mobile" />
+        <div *ngIf="mno.invalid && (mno.dirty || mno.touched)" class="alert alert-danger p-2">
+            <div *ngIf="mno.errors!['required']">This field is mandatory</div>
+            <div *ngIf="mno.errors!['pattern']">Mobile number is expected to be a ten digit number</div>
+        </div>
+    </div>
+    <div>
+        <label>Mail Id</label>
+        <input type="email" class="form-control" formControlName="mailId" />
+        <div *ngIf="mid.invalid && (mid.dirty || mid.touched)" class="alert alert-danger p-2">
+            <div *ngIf="mid.errors!['required']">This field is mandatory</div>
+            <div *ngIf="mid.errors!['email']">A valid email id is expected.</div>
+        </div>
+    </div>
+    <div class="d-grid">
+        <button class="btn btn-primary" [disabled]="conForm.invalid">SAVE</button>
+    </div>
+</form>

@@ -446,7 +446,7 @@ Angular 11
         //Main Executor...
 
         ob.subscribe({
-            next: data => { //we recevie the intemidateData... },
+            next: data => { //we receive the intermidateData... },
             error: err => { //react to the error... },
             complete: () => { //do whateever after the job is complete... }
         }); 
@@ -462,5 +462,5 @@ Angular 11
             | - put(url,reqBody) : Observable
             | - delete(url) : Observable
 
-
+    
         
