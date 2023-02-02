@@ -1,0 +1,38 @@
+<h4>Consumers List</h4>
+
+<p *ngIf="!consumers && !errMsg" class="alert alert-info p-2">
+    Please wait while loading data....
+</p>
+
+<p *ngIf="consumers && consumers.length===0" class="alert alert-info p-2">
+    No Consumers Yet.
+</p>
+
+<p *ngIf="errMsg" class="alert alert-danger p-2">
+    {{errMsg}}
+</p>
+
+<table class="table table-bordered table-striped" *ngIf="consumers && consumers.length>0">
+    <thead>
+        <tr>
+            <th>Consumer#</th>
+            <th>Full Name</th>
+            <th>Mobile</th>
+            <th>Mail</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of consumers">
+            <td>{{c.id}}</td>
+            <td>{{c.fullName}}</td>
+            <td>{{c.mobile}}</td>
+            <td>{{c.mailId}}</td>
+            <td>
+                <a class="btn btn-sm btn-primary me-2" [routerLink]="['/reviews',c.id]">REVIEWS</a>
+                <a class="btn btn-sm btn-secondary me-2" [routerLink]="['/edit',c.id]">EDIT</a>
+                <button type="button" class="btn btn-sm btn-danger" (click)="remove(c.id)">REMOVE</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
