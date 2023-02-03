@@ -1,0 +1,12 @@
+<div class="row border-bottom border-primary p-2" *ngIf="review">
+    <div class="col-1 text-end">{{review.reviewId}}</div>
+    <div class="col-3">{{review.product}}</div>
+    <div class="col">{{review.comments}}</div>
+    <div class="col-2">
+        <button class="btn btn-sm btn-secondary me-1" type="button">EDIT</button>      
+        <button class="btn btn-sm btn-danger" type="button">DELETE</button>      
+    </div>
+</div>
+<div class="alert alert-info p-2 m-2 fw-bold" *ngIf="!review">
+    No review detials received....
+</div>

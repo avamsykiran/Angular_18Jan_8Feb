@@ -1,0 +1,14 @@
+<form class="row border-bottom border-primary p-2" [formGroup]="reviewForm" (ngSubmit)="formSubmitted()">
+    <div class="col-1">
+        <input type="number" readonly class="form-control" formControlName="reviewId"/>
+    </div>
+    <div class="col-3">
+        <input type="text" class="form-control" formControlName="product"/>
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" formControlName="comments"/>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-sm btn-primary" [disabled]="reviewForm.invalid">SAVE</button>      
+    </div>
+</form>

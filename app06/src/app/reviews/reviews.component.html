@@ -1,1 +1,29 @@
-<p>reviews works!</p>
+<div class="col-sm-5 mx-auto alert alert-info p-2 fw-bold" *ngIf="!consumer && !errMsg">
+    Please wiat while loading data...
+</div>
+
+<div class="col-sm-5 mx-auto lert alert-danger p-2 fw-bold" *ngIf="errMsg">
+    {{errMsg}}
+</div>
+
+<div class="col-sm-11 p-2 mx-auto" *ngIf="consumer">
+    <h4> {{consumer.fullName}}'s Reviews</h4>
+    
+    <ng-container *ngIf="reviews">
+        <div class="row border-bottom border-danger p-2 fw-bold">
+            <div class="col-1">Review#</div>
+            <div class="col-3">Product</div>
+            <div class="col">Comments</div>
+            <div class="col-2">Action</div>
+        </div>
+        <app-review-form (save)="add($event)"></app-review-form>
+        <div class="alert alert-info p-2 m-2 fw-bold" *ngIf="reviews.length===0">
+            No review Recorded Yet!
+        </div>
+        <ng-container *ngIf="reviews.length>0">
+            <app-review-details 
+                *ngFor="let r of reviews" [review]="r">
+            </app-review-details>
+        </ng-container>
+    </ng-container>
+</div>

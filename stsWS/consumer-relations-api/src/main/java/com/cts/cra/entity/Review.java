@@ -24,12 +24,12 @@ public class Review {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Review(Long reviewId, String product, String comments, Consumer reviewdBy) {
+	public Review(Long reviewId, String product, String comments, Consumer reviewedBy) {
 		super();
 		this.reviewId = reviewId;
 		this.product = product;
 		this.comments = comments;
-		this.reviewedBy = reviewdBy;
+		this.reviewedBy = reviewedBy;
 	}
 
 	public Long getReviewId() {
@@ -56,11 +56,12 @@ public class Review {
 		this.comments = comments;
 	}
 
-	public Consumer getReviewdBy() {
+	public Consumer getReviewedBy() {
 		return reviewedBy;
 	}
 
-	public void setReviewdBy(Consumer reviewdBy) {
-		this.reviewedBy = reviewdBy;
+	public void setReviewedBy(Consumer reviewedBy) {
+		this.reviewedBy = reviewedBy;
 	}
+
 }

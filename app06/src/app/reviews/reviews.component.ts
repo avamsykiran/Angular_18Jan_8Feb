@@ -38,4 +38,12 @@ export class ReviewsComponent implements OnInit {
       error: err => { console.log(err); this.errMsg = "Unable to load reviews,Please retry later!" }
     })
   }
+
+  add(review:Review){
+    review.reviewedBy=this.consumer;
+    this.reviewService.add(review).subscribe({
+      next: review => this.loadReviews(),
+      error: err => { console.log(err); this.errMsg = "Unable to save review,Please retry later!" }
+    })
+  }
 }

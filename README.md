@@ -462,6 +462,14 @@ Angular 11
             | - put(url,reqBody) : Observable
             | - delete(url) : Observable
 
-    
+    Parent-Child Component Data Exchangew
+
+        Attributes
+
+            are used to pass data from a parent component to a child component.
+
+        EventEmitters
+
+            are used to handle an event occuring in the child by the parent.
     
         

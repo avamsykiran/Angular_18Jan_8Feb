@@ -9,10 +9,12 @@ import { AppComponent } from './app.component';
 import { ConsumersListComponent } from './consumers-list/consumers-list.component';
 import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
+import { ReviewDetailsComponent } from './review-details/review-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ConsumersListComponent, ConsumerFormComponent, ReviewsComponent
+    AppComponent, ConsumersListComponent, ConsumerFormComponent, ReviewsComponent, ReviewFormComponent, ReviewDetailsComponent
   ],
   imports: [
     BrowserModule,
