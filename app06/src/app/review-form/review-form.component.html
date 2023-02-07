@@ -9,6 +9,7 @@
         <input type="text" class="form-control" formControlName="comments"/>
     </div>
     <div class="col-2">
-        <button class="btn btn-sm btn-primary" [disabled]="reviewForm.invalid">SAVE</button>      
+        <button class="btn btn-sm btn-primary me-1" [disabled]="reviewForm.invalid">SAVE</button>      
+        <button class="btn btn-sm btn-danger" type="button" (click)="doCancel()" *ngIf="review">CANCEL</button>      
     </div>
 </form>

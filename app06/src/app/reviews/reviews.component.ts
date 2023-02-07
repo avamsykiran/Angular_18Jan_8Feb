@@ -46,4 +46,31 @@ export class ReviewsComponent implements OnInit {
       error: err => { console.log(err); this.errMsg = "Unable to save review,Please retry later!" }
     })
   }
+
+  remove(id:number){
+    this.reviewService.deleteById(id).subscribe({
+      next: () => this.loadReviews(),
+      error: err => { console.log(err); this.errMsg = "Unable to dele review,Please retry later!" }
+    });
+  }
+
+  markEditable(id:number){
+    let index = this.reviews.findIndex( r => r.reviewId==id);
+    this.reviews[index].isEditable=true;
+  }
+
+  cancelEditable(id:number){
+    let index = this.reviews.findIndex( r => r.reviewId==id);
+    this.reviews[index].isEditable=undefined;
+  }
+
+  update(review:Review){
+    review.reviewedBy=this.consumer;
+    review.isEditable=undefined;
+    this.reviewService.update(review).subscribe({
+      next: review => this.loadReviews(),
+      error: err => { console.log(err); this.errMsg = "Unable to save review,Please retry later!" }
+    })
+  }
+
 }

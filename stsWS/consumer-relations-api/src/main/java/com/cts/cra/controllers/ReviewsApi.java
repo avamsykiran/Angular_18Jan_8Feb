@@ -59,7 +59,7 @@ public class ReviewsApi {
 	
 	@PutMapping
 	public ResponseEntity<Review> update(@RequestBody Review review ){
-		return review.getReviewId()!=null || !reviewRepo.existsById(review.getReviewId()) ?
+		return review.getReviewId()==null || !reviewRepo.existsById(review.getReviewId()) ?
 				new ResponseEntity<Review>(HttpStatus.BAD_REQUEST):
 					new ResponseEntity<Review>(reviewRepo.save(review),HttpStatus.ACCEPTED);
 	}

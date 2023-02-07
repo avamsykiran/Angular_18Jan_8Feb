@@ -3,8 +3,8 @@
     <div class="col-3">{{review.product}}</div>
     <div class="col">{{review.comments}}</div>
     <div class="col-2">
-        <button class="btn btn-sm btn-secondary me-1" type="button">EDIT</button>      
-        <button class="btn btn-sm btn-danger" type="button">DELETE</button>      
+        <button class="btn btn-sm btn-secondary me-1" type="button" (click)="edit()">EDIT</button>      
+        <button class="btn btn-sm btn-danger" type="button" (click)="remove()">DELETE</button>      
     </div>
 </div>
 <div class="alert alert-info p-2 m-2 fw-bold" *ngIf="!review">

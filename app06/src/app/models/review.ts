@@ -5,4 +5,5 @@ export interface Review {
 	product:string;
 	comments:string;
     reviewedBy:Consumer;
+    isEditable?:boolean;
 }
