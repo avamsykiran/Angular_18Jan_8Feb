@@ -472,4 +472,5 @@ Angular 11
 
             are used to handle an event occuring in the child by the parent.
     
+    
         

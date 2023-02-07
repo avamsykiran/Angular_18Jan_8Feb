@@ -1,0 +1,23 @@
+<form>
+  <label>Backgroudn Color:
+    <input type="text" [(ngModel)]="color" name="textBox" />
+  </label>
+</form>
+
+<p [appSpecial]="color">
+  This is a para whose background color is controled by the form.
+</p>
+
+<p appSpecial>
+  This is a normal Para.
+</p>
+
+<div appSpecial="#0000ff">
+  This is a normal DIV.
+</div>
+
+<div>
+  <p>{{240|intoWords}}</p>
+  <p>{{240.001|intoWords}}</p>
+  <p>{{123.4|intoWords}}</p>
+</div>
