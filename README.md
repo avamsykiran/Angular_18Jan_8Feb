@@ -473,4 +473,20 @@ Angular 11
             are used to handle an event occuring in the child by the parent.
     
     
-        
+    Router Guards
+
+        ng g guard GuardName        
+
+            CanActive           the respective link should work if CanActive returns true.
+            CanDeactive         the respective component of the link can be left (to navigate to another) if CanDeactive returns true.
+            CanLoad             the respective module can not be loaded into the memory unless CanLoad returns true.
+            CanChildActive      the respective child-link should work only if CanChildActive returns true.
+
+    Interceptors
+
+        ng g interceptor InterceptorName
+
+            can modify an incoming req or outgoing response.
+
+            for example, we can use an interceptor to read any encoding or request headers from an incoming req.
+            and we can use to attach any headers or security tokens to an outgoing response.
